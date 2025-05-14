@@ -5,7 +5,12 @@ import React, { useState } from 'react';
 
 // images 
 import Anvarsha from './images/Anvarsha.JPG';
-
+import cover from './images/cover.jpg';
+import award from './images/award.jpg';
+import first from './images/1.jpg';
+import second from './images/2.jpg';
+import third from './images/3.jpg';
+import fourth from './images/4.jpg';
 
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,7 +31,7 @@ const App: React.FC = () => {
       <nav className="fixed top-0 left-0 right-0 bg-gray-900 text-white shadow-lg z-50">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           <a href="#home" className="text-2xl font-serif font-bold text-white flex items-center">
-            <span className="text-yellow-400">A</span>nvarsha <span className="text-yellow-400 ml-2">S</span>hamsu
+          <span className="text-yellow-400">A</span>dvocate <span className="text-yellow-400 ml-2">A</span>nvarsha <span className="text-yellow-400 ml-2">S</span>hamsu
           </a>
           
           <div className="hidden md:flex space-x-8">
@@ -46,7 +51,7 @@ const App: React.FC = () => {
             className="md:hidden text-white focus:outline-none cursor-pointer !rounded-button whitespace-nowrap"
             onClick={toggleMenu}
           >
-            <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'} text-2xl`}></i>
+            <i className={`fa ${isMenuOpen ? 'fa-times' : 'fa-bars'} text-2xl`}></i>
           </button>
         </div>
 
@@ -115,23 +120,24 @@ const App: React.FC = () => {
             <div className="w-full md:w-2/3 md:pl-16">
               <h3 className="text-2xl font-serif font-bold text-gray-800 mb-4">About Me</h3>
               <p className="text-gray-700 mb-6 leading-relaxed">
-                With over 15 years of experience in legal practice, I specialize in providing comprehensive legal solutions tailored to meet the unique needs of each client. My approach combines thorough legal knowledge with practical problem-solving skills to deliver results that exceed expectations.
+                With over 8 years of experience in legal practice, I specialize in providing comprehensive legal solutions tailored to meet the unique needs of each client. My approach combines thorough legal knowledge with practical problem-solving skills to deliver results that exceed expectations.
               </p>
               
               <div className="mb-8">
                 <h4 className="text-xl font-serif font-semibold text-gray-800 mb-3">Areas of Expertise</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {[
-                    { icon: 'fa-balance-scale', title: 'Corporate Law' },
-                    { icon: 'fa-gavel', title: 'Civil Litigation' },
-                    { icon: 'fa-home', title: 'Real Estate Law' },
-                    { icon: 'fa-file-contract', title: 'Contract Law' }
+                    { icon: 'fa fa-balance-scale', title: 'Corporate Law' },
+                    { icon: 'fa fa-gavel', title: 'Civil Litigation' },
+                    { icon: 'fa fa-home', title: 'Real Estate Law' },
+                    { icon: 'fa fa-user', title: 'Criminal Law' }
                   ].map((item, index) => (
                     <div key={index} className="flex items-center p-3 bg-gray-50 rounded-lg shadow-sm">
-                      <i className={`fas ${item.icon} text-yellow-500 text-xl mr-3`}></i>
+                      <i className={`${item.icon} text-yellow-500 text-xl mr-3`}></i>
                       <span className="font-medium">{item.title}</span>
                     </div>
                   ))}
+                  
                 </div>
               </div>
               
@@ -139,7 +145,7 @@ const App: React.FC = () => {
                 <h4 className="text-xl font-serif font-semibold text-gray-800 mb-3">Professional Achievements</h4>
                 <ul className="list-disc list-inside text-gray-700 space-y-2">
                   <li>Successfully represented over 500 clients in various legal matters</li>
-                  <li>Recognized by Legal Excellence Awards for outstanding legal service (2023)</li>
+                  <li>Recognized by best junior award (2022)</li>
                   <li>Published author in several prestigious legal journals</li>
                   <li>Guest lecturer at National Law University</li>
                 </ul>
@@ -164,28 +170,28 @@ const App: React.FC = () => {
               
               {[
                 {
-                  year: '2010',
-                  title: 'Juris Doctor',
-                  institution: 'Harvard Law School',
+                  year: '2016',
+                  title: 'Bachelor OfLaws (LLB)',
+                  institution: 'Govt Law College, Thrissur',
                   description: 'Graduated with honors, focusing on Corporate and International Law.'
                 },
                 {
-                  year: '2007',
-                  title: 'Bachelor of Arts in Political Science',
-                  institution: 'Yale University',
-                  description: 'Magna Cum Laude with distinction in research and academic excellence.'
-                },
-                {
-                  year: '2012',
+                  year: '2017',
                   title: 'Bar Admission',
                   institution: 'State Bar Association',
                   description: 'Licensed to practice law in multiple jurisdictions.'
                 },
                 {
-                  year: '2015',
-                  title: 'Certified Mediator',
-                  institution: 'National Mediation Institute',
-                  description: 'Specialized training in alternative dispute resolution.'
+                  year: '2012',
+                  title: 'Master of Business Administration(MBA)',
+                  institution: 'MG University',
+                  description: 'Magna Cum Laude with distinction in research and academic excellence.'
+                },
+                {
+                  year: '2010',
+                  title: 'Bachelor of Commerce(B.com)',
+                  institution: 'MG University',
+                  description: 'Graduated with honors, focusing on Corporate and International Law..'
                 }
               ].map((item, index) => (
                 <div key={index} className={`relative z-10 mb-12 ${index % 2 === 0 ? 'md:ml-auto md:mr-0 md:text-right' : 'md:mr-auto md:ml-0'} md:w-5/12`}>
@@ -208,15 +214,15 @@ const App: React.FC = () => {
               <h3 className="text-xl font-serif font-bold text-gray-800 mb-4">Professional Memberships</h3>
               <ul className="space-y-3">
                 <li className="flex items-center">
-                  <i className="fas fa-check-circle text-yellow-500 mr-3"></i>
-                  <span>American Bar Association</span>
+                  <i className="fa fa-check-circle text-yellow-500 mr-3"></i>
+                  <span>Perumbavoor Bar Association</span>
                 </li>
                 <li className="flex items-center">
-                  <i className="fas fa-check-circle text-yellow-500 mr-3"></i>
+                  <i className="fa fa-check-circle text-yellow-500 mr-3"></i>
                   <span>International Law Society</span>
                 </li>
                 <li className="flex items-center">
-                  <i className="fas fa-check-circle text-yellow-500 mr-3"></i>
+                  <i className="fa fa-check-circle text-yellow-500 mr-3"></i>
                   <span>Corporate Law Alliance</span>
                 </li>
               </ul>
@@ -226,15 +232,15 @@ const App: React.FC = () => {
               <h3 className="text-xl font-serif font-bold text-gray-800 mb-4">Certifications</h3>
               <ul className="space-y-3">
                 <li className="flex items-center">
-                  <i className="fas fa-certificate text-yellow-500 mr-3"></i>
+                  <i className="fa fa-certificate text-yellow-500 mr-3"></i>
                   <span>Certified Trial Lawyer</span>
                 </li>
                 <li className="flex items-center">
-                  <i className="fas fa-certificate text-yellow-500 mr-3"></i>
+                  <i className="fa fa-certificate text-yellow-500 mr-3"></i>
                   <span>Alternative Dispute Resolution</span>
                 </li>
                 <li className="flex items-center">
-                  <i className="fas fa-certificate text-yellow-500 mr-3"></i>
+                  <i className="fa fa-certificate text-yellow-500 mr-3"></i>
                   <span>Intellectual Property Specialist</span>
                 </li>
               </ul>
@@ -244,16 +250,16 @@ const App: React.FC = () => {
               <h3 className="text-xl font-serif font-bold text-gray-800 mb-4">Languages</h3>
               <ul className="space-y-3">
                 <li className="flex items-center">
-                  <i className="fas fa-language text-yellow-500 mr-3"></i>
-                  <span>English (Native)</span>
+                  <i className="fa fa-language text-yellow-500 mr-3"></i>
+                  <span>Malayalam (Native)</span>
                 </li>
                 <li className="flex items-center">
-                  <i className="fas fa-language text-yellow-500 mr-3"></i>
-                  <span>French (Fluent)</span>
+                  <i className="fa fa-language text-yellow-500 mr-3"></i>
+                  <span>English (Fluent)</span>
                 </li>
                 <li className="flex items-center">
-                  <i className="fas fa-language text-yellow-500 mr-3"></i>
-                  <span>Spanish (Proficient)</span>
+                  <i className="fa fa-language text-yellow-500 mr-3"></i>
+                  <span>Hindi (Proficient)</span>
                 </li>
               </ul>
             </div>
@@ -275,32 +281,32 @@ const App: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: 'fa-building',
+                icon: 'fa fa-building',
                 title: 'Corporate Law',
                 description: 'Expert guidance for businesses on formation, governance, compliance, and corporate transactions.'
               },
               {
-                icon: 'fa-gavel',
+                icon: 'fa fa-gavel',
                 title: 'Civil Litigation',
                 description: 'Strong representation in civil disputes, focusing on efficient and favorable resolutions.'
               },
               {
-                icon: 'fa-home',
+                icon: 'fa fa-home',
                 title: 'Real Estate Law',
                 description: 'Comprehensive legal services for property transactions, leases, and real estate disputes.'
               },
               {
-                icon: 'fa-file-contract',
-                title: 'Contract Law',
-                description: 'Drafting, reviewing, and negotiating contracts to protect your interests and mitigate risks.'
+                icon: 'fa fa-user',
+                title: 'Criminal Law',
+                description: 'Advising, defending, and representing clients in criminal proceedings to safeguard their rights and ensure a fair legal process.'
               },
               {
-                icon: 'fa-landmark',
+                icon: 'fa fa-university',
                 title: 'Constitutional Law',
                 description: 'Specialized expertise in constitutional rights, governmental powers, and related litigation.'
               },
               {
-                icon: 'fa-balance-scale',
+                icon: 'fa fa-balance-scale',
                 title: 'Family Law',
                 description: 'Compassionate legal support for divorce, child custody, and other family-related matters.'
               }
@@ -308,14 +314,14 @@ const App: React.FC = () => {
               <div key={index} className="bg-gray-50 rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-2">
                 <div className="p-8">
                   <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-6 mx-auto">
-                    <i className={`fas ${service.icon} text-gray-900 text-2xl`}></i>
+                    <i className={`${service.icon} text-gray-900 text-2xl`}></i>
                   </div>
                   <h3 className="text-xl font-serif font-bold text-center mb-4">{service.title}</h3>
                   <p className="text-gray-600 text-center">{service.description}</p>
                 </div>
                 <div className="bg-gray-100 py-4 px-8 text-center">
                   <button className="text-yellow-600 hover:text-yellow-800 font-medium cursor-pointer !rounded-button whitespace-nowrap">
-                    Learn More <i className="fas fa-arrow-right ml-2"></i>
+                    Learn More <i className="fa fa-arrow-right ml-2"></i>
                   </button>
                 </div>
               </div>
@@ -336,27 +342,26 @@ const App: React.FC = () => {
             {[
               {
                 title: 'Office Reception',
-                image: 'https://readdy.ai/api/search-image?query=elegant%20law%20office%20reception%20area%20with%20wooden%20reception%20desk%2C%20comfortable%20waiting%20area%20with%20leather%20chairs%2C%20law%20books%20on%20shelves%2C%20modern%20professional%20environment%20with%20warm%20lighting&width=600&height=400&seq=gallery1&orientation=landscape'
+                image: third
               },
               {
-                title: 'Client Consultation',
-                image: 'https://readdy.ai/api/search-image?query=professional%20lawyer%20in%20navy%20suit%20meeting%20with%20client%20in%20modern%20conference%20room%2C%20discussing%20documents%2C%20professional%20setting%20with%20large%20windows%2C%20bookshelves%20with%20law%20books%20in%20background&width=600&height=400&seq=gallery2&orientation=landscape'
+                title: 'With My Mendors',
+                image: cover
               },
               {
-                title: 'Law Library',
-                image: 'https://readdy.ai/api/search-image?query=elegant%20law%20library%20with%20wooden%20bookshelves%20filled%20with%20law%20books%2C%20leather%20chairs%2C%20large%20windows%20with%20natural%20light%2C%20classic%20professional%20environment%20with%20desk%20and%20reading%20lamps&width=600&height=400&seq=gallery3&orientation=landscape'
+                title: 'My associate in the legal practice... ',
+                image: first
               },
               {
-                title: 'Court Appearance',
-                image: 'https://readdy.ai/api/search-image?query=professional%20lawyer%20in%20formal%20attire%20standing%20confidently%20in%20courtroom%2C%20addressing%20judge%2C%20courtroom%20setting%20with%20wooden%20panels%2C%20formal%20legal%20proceeding%20environment&width=600&height=400&seq=gallery4&orientation=landscape'
+                title: 'The Partner in life and law',
+                image: second
               },
               {
-                title: 'Legal Conference',
-                image: 'https://readdy.ai/api/search-image?query=professional%20legal%20conference%20with%20lawyers%20in%20formal%20attire%2C%20presentation%20screen%2C%20audience%20taking%20notes%2C%20elegant%20conference%20room%20setting%20with%20professional%20atmosphere&width=600&height=400&seq=gallery5&orientation=landscape'
-              },
+                title: 'Organization',
+                image: fourth             },
               {
                 title: 'Award Ceremony',
-                image: 'https://readdy.ai/api/search-image?query=formal%20award%20ceremony%20for%20legal%20professionals%2C%20lawyer%20receiving%20award%20on%20stage%2C%20elegant%20ballroom%20setting%20with%20formal%20attire%2C%20professional%20recognition%20event%20with%20podium%20and%20audience&width=600&height=400&seq=gallery6&orientation=landscape'
+                image: award
               }
             ].map((item, index) => (
               <div key={index} className="overflow-hidden rounded-lg shadow-lg">
@@ -446,56 +451,56 @@ const App: React.FC = () => {
                 <div className="space-y-6">
                   <div className="flex items-start">
                     <div className="bg-yellow-400 rounded-full p-3 mr-4">
-                      <i className="fas fa-map-marker-alt text-gray-900"></i>
+                      <i className="fa fa-map-marker text-gray-900"></i>
                     </div>
                     <div>
                       <h4 className="font-bold mb-1">Office Address</h4>
                       <p className="text-gray-600">
-                        123 Legal Avenue, Suite 500<br />
-                        New York, NY 10001
+                      Adam complex, Perumbavoor, <br />
+                      Ernakulam-683542
                       </p>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
                     <div className="bg-yellow-400 rounded-full p-3 mr-4">
-                      <i className="fas fa-phone-alt text-gray-900"></i>
+                      <i className="fa fa-phone text-gray-900"></i>
                     </div>
                     <div>
                       <h4 className="font-bold mb-1">Phone</h4>
-                      <a href="tel:+12125551234" className="text-gray-600 hover:text-yellow-600 transition duration-300">
-                        +1 (212) 555-1234
+                      <a href="tel:+91 9037 387 814" className="text-gray-600 hover:text-yellow-600 transition duration-300">
+                        +91 9037 387 814
                       </a>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
                     <div className="bg-yellow-400 rounded-full p-3 mr-4">
-                      <i className="fab fa-whatsapp text-gray-900"></i>
+                      <i className="fa fa-whatsapp text-gray-900"></i>
                     </div>
                     <div>
                       <h4 className="font-bold mb-1">WhatsApp</h4>
-                      <a href="https://wa.me/12125551234" className="text-gray-600 hover:text-yellow-600 transition duration-300">
-                        +1 (212) 555-1234
+                      <a href="https://wa.me/+91 9037 387 814" className="text-gray-600 hover:text-yellow-600 transition duration-300">
+                      +91 9037 387 814
                       </a>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
                     <div className="bg-yellow-400 rounded-full p-3 mr-4">
-                      <i className="fas fa-envelope text-gray-900"></i>
+                      <i className="fa fa-envelope text-gray-900"></i>
                     </div>
                     <div>
                       <h4 className="font-bold mb-1">Email</h4>
                       <a href="mailto:anvarsha@legalcounsel.com" className="text-gray-600 hover:text-yellow-600 transition duration-300">
-                        anvarsha@legalcounsel.com
+                      anvarshashamsu@gmail.com
                       </a>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
                     <div className="bg-yellow-400 rounded-full p-3 mr-4">
-                      <i className="fas fa-clock text-gray-900"></i>
+                      <i className="fa fa-clock-o text-gray-900"></i>
                     </div>
                     <div>
                       <h4 className="font-bold mb-1">Office Hours</h4>
@@ -510,14 +515,14 @@ const App: React.FC = () => {
                 <div className="mt-8">
                   <h4 className="font-bold mb-4">Find Me On</h4>
                   <div className="flex space-x-4">
-                    <a href="#" className="bg-gray-200 hover:bg-yellow-400 text-gray-800 rounded-full w-10 h-10 flex items-center justify-center transition duration-300 cursor-pointer">
-                      <i className="fab fa-linkedin-in"></i>
+                    <a href="https://www.instagram.com/adv_anvarsha_shamsu/" target='_blank' className="bg-gray-200 hover:bg-yellow-400 text-gray-800 rounded-full w-10 h-10 flex items-center justify-center transition duration-300 cursor-pointer">
+                      <i className="fa fa-instagram"></i>
                     </a>
                     <a href="#" className="bg-gray-200 hover:bg-yellow-400 text-gray-800 rounded-full w-10 h-10 flex items-center justify-center transition duration-300 cursor-pointer">
-                      <i className="fab fa-twitter"></i>
+                      <i className="fa fa-twitter"></i>
                     </a>
-                    <a href="#" className="bg-gray-200 hover:bg-yellow-400 text-gray-800 rounded-full w-10 h-10 flex items-center justify-center transition duration-300 cursor-pointer">
-                      <i className="fab fa-facebook-f"></i>
+                    <a href="https://www.facebook.com/anvarsha.shamsu" target='_blank' className="bg-gray-200 hover:bg-yellow-400 text-gray-800 rounded-full w-10 h-10 flex items-center justify-center transition duration-300 cursor-pointer">
+                      <i className="fa fa-facebook"></i>
                     </a>
                   </div>
                 </div>
@@ -527,8 +532,9 @@ const App: React.FC = () => {
           
           <div className="mt-16">
             <div className="rounded-lg overflow-hidden shadow-lg h-96">
+             
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215651479967!2d-73.98784492346177!3d40.75171937138451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9aeb1c6b5%3A0x35b1cfbc89a6097f!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1682373429989!5m2!1sen!2sus" 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d490.9804411827378!2d76.4747124!3d10.111891!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07e3357118bc57%3A0xb9d410b98b42e292!2sAnvar%20%26Amal%20Associates!5e0!3m2!1sen!2sin!4v1747134562347!5m2!1sen!2sin" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
@@ -579,14 +585,14 @@ const App: React.FC = () => {
               <div>
                 <h4 className="text-lg font-bold mb-4">Connect</h4>
                 <div className="flex space-x-4">
-                  <a href="#" className="text-gray-400 hover:text-yellow-400 transition duration-300">
-                    <i className="fab fa-linkedin-in text-xl"></i>
+                  <a href="https://www.instagram.com/adv_anvarsha_shamsu/" className="text-gray-400 hover:text-yellow-400 transition duration-300">
+                    <i className="fa fa-instagram text-xl"></i>                    
                   </a>
                   <a href="#" className="text-gray-400 hover:text-yellow-400 transition duration-300">
-                    <i className="fab fa-twitter text-xl"></i>
+                    <i className="fa fa-twitter text-xl"></i>
                   </a>
-                  <a href="#" className="text-gray-400 hover:text-yellow-400 transition duration-300">
-                    <i className="fab fa-facebook-f text-xl"></i>
+                  <a href="https://www.facebook.com/anvarsha.shamsu/" className="text-gray-400 hover:text-yellow-400 transition duration-300">
+                    <i className="fa fa-facebook-f text-xl"></i>
                   </a>
                 </div>
               </div>
